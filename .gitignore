@@ -1,0 +1,9 @@
+dist/
+node_modules/
+.DS_Store
+__pycache__/
+.env
+.env.*
+exports/
+profiles/
+*.local.json

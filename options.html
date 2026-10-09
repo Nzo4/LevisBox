@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LevisBox</title><link rel="stylesheet" href="popup.css"></head>
+<body data-view="tab">
+<header><div><h1>Levis<span>Box</span></h1><p>HTTP-заголовки под вашим контролем</p></div><button id="pause" class="switch" type="button" aria-pressed="false">Пауза</button></header>
+<main>
+<div class="profile-bar"><label class="sr-only" for="profiles">Профиль</label><select id="profiles"></select><button id="new-profile" title="Новый профиль" aria-label="Новый профиль">+</button><button id="duplicate-profile" title="Копировать профиль" aria-label="Копировать профиль">⧉</button><button id="delete-profile" title="Удалить профиль" aria-label="Удалить профиль">−</button></div>
+<label for="profile-name">Название профиля</label><input id="profile-name" maxlength="80" placeholder="Основной">
+<label for="scope">Для каких запросов</label><input id="scope" maxlength="1500" placeholder="api.example.com или https://example.com/api/*" spellcheck="false" autocomplete="off">
+<p class="hint">Домен — HTTP и HTTPS. <code>*.example.com</code> — с поддоменами. <code>*</code> — все сайты.</p>
+<div class="section-title"><h2>Заголовки</h2><button id="add-header">+ Добавить</button></div>
+<div id="headers"></div><p id="empty" class="empty">Добавьте заголовок, укажите сайт и нажмите «Применить».</p>
+<div id="status" role="status" aria-live="polite">Загрузка…</div>
+<p id="error" role="alert" hidden></p>
+<div class="transfer"><button id="import-json">Импорт JSON</button><button id="export-json">Экспорт JSON</button><button id="open-options" title="Открыть редактор во вкладке">Во вкладке ↗</button></div>
+<input id="import-file" type="file" accept=".json,application/json" hidden>
+</main>
+<footer><p id="access">Доступ к сайту запрашивается при применении.</p><button id="save" class="primary" disabled>Применить</button></footer>
+<template id="header-template"><article class="header-row">
+<div class="row-top"><label class="toggle"><input class="header-enabled" type="checkbox" checked> Включён</label><select class="header-target" aria-label="Тип заголовка"><option value="request">Запрос</option><option value="response">Ответ</option></select><select class="header-operation" aria-label="Операция"><option value="set">Задать</option><option value="append">Добавить</option><option value="remove">Удалить</option></select><button class="remove-header" aria-label="Удалить правило" title="Удалить правило">×</button></div>
+<input class="header-name" placeholder="Имя заголовка · например X-Debug" aria-label="Имя заголовка" maxlength="256" autocomplete="off" spellcheck="false">
+<input class="header-value" placeholder="Значение" aria-label="Значение заголовка" maxlength="8192" autocomplete="off" spellcheck="false">
+</article></template>
+<script type="module" src="popup.js"></script></body></html>

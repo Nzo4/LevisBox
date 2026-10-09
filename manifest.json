@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "LevisBox",
+  "version": "1.0.0",
+  "description": "Профили HTTP-заголовков: запросы и ответы, фильтры по сайту, пауза и сохранение правил.",
+  "permissions": [
+    "storage",
+    "declarativeNetRequestWithHostAccess",
+    "nativeMessaging"
+  ],
+  "optional_host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "action": {
+    "default_title": "LevisBox",
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  }
+}

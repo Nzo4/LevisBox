@@ -1,0 +1,13 @@
+{
+  "name": "levisbox",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test headers.test.js",
+    "build": "python3 package.py"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
